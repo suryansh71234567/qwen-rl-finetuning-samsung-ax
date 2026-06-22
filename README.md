@@ -85,10 +85,10 @@ All training and evaluation scripts are in [`src/`](./src/):
 |--------|---------|
 | [`src/sft_math.py`](./src/sft_math.py) | Phase 1: SFT on MetaMathQA (GSM8K track) |
 | [`src/sft_qa.py`](./src/sft_qa.py) | Phase 1: SFT on MMLU + StrategyQA (QA track) |
-| [`src/rl_math.py`](./src/rl_math.py) | Phase 2: GRPO RL with 3-tier curriculum (math) |
-| [`src/rl_qa_no_cot.py`](./src/rl_qa_no_cot.py) | Phase 2: GRPO RL direct-answer (QA, working) |
-| [`src/rl_qa_cot.py`](./src/rl_qa_cot.py) | Phase 2: GRPO RL with CoT (QA, ablation — failed) |
-| [`src/merge_models.py`](./src/merge_models.py) | Phase 3: Task vector model merging with grid search |
+| [`src/merge_models.py`](./src/merge_models.py) | Phase 2: Task vector model merging with grid search |
+| [`src/rl_math.py`](./src/rl_math.py) | Phase 3: GRPO RL with 3-tier curriculum (math) |
+| [`src/rl_qa_no_cot.py`](./src/rl_qa_no_cot.py) | Phase 3: GRPO RL direct-answer (QA, working) |
+| [`src/rl_qa_cot.py`](./src/rl_qa_cot.py) | Phase 3: GRPO RL with CoT (QA, ablation — failed) |
 | [`src/evaluate.py`](./src/evaluate.py) | Holdout evaluation across all three benchmarks |
 
 ### Kaggle Notebooks (With Execution Logs)
@@ -98,11 +98,11 @@ The [`src/`](./src/) folder contains the **original Kaggle notebooks with full t
 |----------|-------------|
 | [`src/sft_math_metamathqa.ipynb`](./src/sft_math_metamathqa.ipynb) | SFT Math — full training run with loss curves |
 | [`src/sft_qa_strategy_mmlu.ipynb`](./src/sft_qa_strategy_mmlu.ipynb) | SFT QA — full training run |
-| [`src/rl_grpo_math.ipynb`](./src/rl_grpo_math.ipynb) | GRPO RL Math — reward curves, curriculum promotions |
 | [`src/sft_qa_v2_strategy_mmlu.ipynb`](./src/sft_qa_v2_strategy_mmlu.ipynb) | SFT QA v2 (improved dataset loading) |
 | [`src/sft_flan_cot.ipynb`](./src/sft_flan_cot.ipynb) | SFT with FLAN-COT (ablation study) |
-| [`src/evaluate.ipynb`](./src/evaluate.ipynb) | Evaluation pipeline execution logs |
 | [`src/merge-models.ipynb`](./src/merge-models.ipynb) | Task vector merging execution logs |
+| [`src/rl_grpo_math.ipynb`](./src/rl_grpo_math.ipynb) | GRPO RL Math — reward curves, curriculum promotions |
+| [`src/evaluate.ipynb`](./src/evaluate.ipynb) | Evaluation pipeline execution logs |
 
 ### Models Used
 - [Qwen/Qwen2.5-1.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct) — Base model (Apache 2.0)

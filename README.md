@@ -40,13 +40,14 @@ We ran **10+ distinct experiments** across the three-phase pipeline. Many things
 |---|-----------|---------|
 | 1 | SFT Math on MetaMathQA (150k, 1 epoch) | ✅ Strong GSM8K improvement |
 | 2 | SFT QA with FLAN-CoT dataset | ✅ **Breakthrough:** StrategyQA improved from 57% to 61% |
-| 3 | SFT QA direct-answer format | ❌ Underperformed CoT on complex reasoning |
-| 4 | GRPO Math with `max_new_tokens=800` | ❌ Constant token truncation, clipped_ratio=93% |
-| 5 | GRPO Math with mismatched prompt template | ❌ Model never generates EOS — `clipped_ratio=93.75%` |
-| 6 | GRPO Math with fixed template + `max_new_tokens=500` | ✅ Reward signal established; GSM8K reached 63% |
-| 7 | GRPO QA with CoT + `<think>` tags (Track B) | ❌ Reward sparsity without proper CoT bootstrapping |
-| 8 | Task Vector Merge (λ=0.5/0.5) | ✅ Retained both domain gains with only minor dip |
-| 9 | SFT stacking LoRA on quantised model | ❌ `TypeError` — fixed by two-stage LoRA strategy |
+| 3 | SFT QA with CommonsenseQA dataset | ❌ Breaks the multi-step logic needed for StrategyQA. |
+| 4 | SFT QA direct-answer format | ❌ Underperformed CoT on complex reasoning |
+| 5 | GRPO Math with `max_new_tokens=800` | ❌ Constant token truncation, clipped_ratio=93% |
+| 6 | GRPO Math with mismatched prompt template | ❌ Model never generates EOS — `clipped_ratio=93.75%` |
+| 7 | GRPO Math with fixed template + `max_new_tokens=500` | ✅ Reward signal established; GSM8K reached 63% |
+| 8 | GRPO QA with CoT + `<think>` tags (Track B) | ❌ Reward sparsity without proper CoT bootstrapping |
+| 9 | Task Vector Merge (λ=0.5/0.5) | ✅ Retained both domain gains with only minor dip |
+| 10 | SFT stacking LoRA on quantised model | ❌ `TypeError` — fixed by two-stage LoRA strategy |
 
 *[Add your own observations and numbers here — you know the experiments best.]*
 

@@ -65,7 +65,6 @@ We ran **10+ distinct experiments** across the three-phase pipeline. Many things
 | After RL Math (GRPO, MetaMathQA 2k) | **63.0%** | - | r=4 LoRA, 3-tier curriculum |
 | **Merged Model (Task Vectors)** | **~62.0%** | **~60.5%** | λ_math=0.5, λ_qa=0.5 (Minor dip from merge) |
 
-> Replace `[FILL]` with your actual numbers before submission.
 
 ---
 
@@ -111,6 +110,8 @@ The [`notebooks/`](./notebooks/) folder contains the **original Kaggle notebooks
 - [Suryansh7123/qwen2.5_lora_r16_finetune_STRATEGY](https://huggingface.co/Suryansh7123/qwen2.5_lora_r16_finetune_STRATEGY) — SFT QA LoRA checkpoint
 - [Suryansh7123/qwen2.5_grpo_rl_r4_metamath](https://huggingface.co/Suryansh7123/qwen2.5_grpo_rl_r4_metamath) — RL Math adapter (GRPO)
 - [Suryansh7123/qwen2.5_grpo_rl_qa_no_cot](https://huggingface.co/Suryansh7123/qwen2.5_grpo_rl_qa_no_cot) — RL QA adapter (GRPO, no-CoT)
+- [kanishkav/qwen2.5-1.5b-SFT-FLANCOT](https://huggingface.co/kanishkav/qwen2.5-1.5b-SFT-FLANCOT) -SFT on FLANCOT
+- [kanishkav/qwen2.5-1.5B-SFT-CSQA](https://huggingface.co/kanishkav/qwen2.5-1.5B-SFT-CSQA) - SFT on CommonsenseQA
 
 ### Datasets Used
 - [meta-math/MetaMathQA](https://huggingface.co/datasets/meta-math/MetaMathQA) — Math SFT + RL (MIT License)
@@ -119,9 +120,7 @@ The [`notebooks/`](./notebooks/) folder contains the **original Kaggle notebooks
 - [openai/gsm8k](https://huggingface.co/datasets/openai/gsm8k) — Grade School Math evaluation (MIT License)
 
 ### Datasets Published
-- No new datasets were created. All training data is derived from publicly licensed datasets listed above.
-
----
+- [kanishkav/OpenThoughts_processed_qwen_Dataset](https://huggingface.co/datasets/kanishkav/OpenThoughts_processed_qwen_Dataset) - datset processed for qwen format
 
 ## Technical Pipeline
 

@@ -39,8 +39,8 @@ We ran **10+ distinct experiments** across the three-phase pipeline. Many things
 | # | Experiment | Outcome |
 |---|-----------|---------|
 | 1 | SFT Math on MetaMathQA (150k, 1 epoch) | ✅ Strong GSM8K improvement |
-| 2 | SFT QA with FLAN-CoT dataset | ✅ **Breakthrough:** StrategyQA improved from 57% to 61% |
-| 3 | SFT QA with CommonsenseQA dataset | ❌ Breaks the multi-step logic needed for StrategyQA. |
+| 2 | SFT QA with CommonsenseQA dataset | ❌ Breaks the multi-step logic needed for StrategyQA. |
+| 3 | SFT QA with FLAN-CoT dataset | ✅ **Breakthrough:** StrategyQA improved from 57% to 61% |
 | 4 | SFT QA direct-answer format | ❌ Underperformed CoT on complex reasoning |
 | 5 | GRPO Math with `max_new_tokens=800` | ❌ Constant token truncation, clipped_ratio=93% |
 | 6 | GRPO Math with mismatched prompt template | ❌ Model never generates EOS — `clipped_ratio=93.75%` |

@@ -1,14 +1,14 @@
 # RL Fine-Tuning of Qwen2.5-1.5B for Multi-Benchmark QA
 
 <!-- FILL IN BEFORE SUBMISSION -->
-- **Problem Statement Number** - 7
-- **Problem Statement Title** - Fine-Tuning and Reinforcement Learning for Multi-Benchmark Language Model Optimization
-- **Team name** - [TEAM_NAME]
-- **Team members (Names)** - Suryansh Singh
-- **Institute/College Name** - [INSTITUTE_NAME, Campus, Address]
-- **Final Presentation Google Drive Link** - [ADD_GOOGLE_DRIVE_LINK]
-- **Full Submission Demo Video Link** - [ADD_YOUTUBE_LINK]
-- **Setup & Result Reproducibility Video Link** - [ADD_YOUTUBE_LINK]
+- **Problem Statement Number** - 6
+- **Problem Statement Title** - Enhancing Reasoning in Small Language Models (SLMs) using Reinforcement Learning
+- **Team name** - Reason_reinforced
+- **Team members (Names)** - R Kanishka Varshini , Suryansh Singh
+- **Institute/College Name** - Indian Institute Of Technology Roorkee , Roorkee ,  Roorkee - Haridwar Highway, Roorkee, Uttarakhand 247667
+- **Final Presentation Google Drive Link** - https://drive.google.com/drive/folders/1SyJNupXwflVHkONSi2S88umqF5YNBTcI
+- **Full Submission Demo Video Link** - 
+- **Setup & Result Reproducibility Video Link** - 
 
 ---
 

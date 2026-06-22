@@ -34,14 +34,14 @@ os.environ["UNSLOTH_COMPILE_DISABLE"] = "1"
 os.environ["TORCHDYNAMO_DISABLE"]     = "1"
 ```
 
-### Step 5 — Run the Scripts
+### Step 5 — Notebooks upload
 
 upload the notebooks in the kaggle and execute in the following order
 
 **Recommended order:**
 1. `sft_math_metamathqa.ipynb` → trains SFT Math, pushes to `Suryansh7123/qwen2.5_lora_r16_finetune`
 2. `sft_flan_cot.ipynb` → trains SFT QA, pushes to `kanishkav/qwen2.5-1.5b-SFT-FLANCOT`
-3. `merge_models.ipynb` → merges both RL models via task vectors
+3. `merge_models.ipynb` → merges both SFT models via Dare Ties method 
 4. `rl_grpo_math.ipynb` → loads SFT Math checkpoint, runs GRPO, pushes RL adapter
 6. `evaluate.ipynb` → evaluates merged model on all three benchmarks
 
@@ -59,32 +59,17 @@ Requires a GPU with **≥14 GB VRAM** and **CUDA CC ≥ 7.5** (RTX 2080 Ti or be
 ### Setup
 
 ```bash
-# Clone the repository
-git clone https://github.com/[YOUR_GITHUB_USERNAME]/[YOUR_REPO_NAME].git
-cd [YOUR_REPO_NAME]
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate   # Windows: venv\Scripts\activate
-
-# Install dependencies (same pins as Kaggle)
+# Install dependencies in Kaggle 
 pip install "unsloth[cu118-ampere-torch230] @ git+https://github.com/unslothai/unsloth.git"
 pip install --no-deps trl==0.24.0 peft accelerate bitsandbytes datasets
 pip install huggingface_hub transformers==5.5.0
 ```
 
-### Set HuggingFace Token
-
-```bash
-export HF_TOKEN="hf_your_token_here"   # Linux/Mac
-$env:HF_TOKEN = "hf_your_token_here"   # Windows PowerShell
-```
-
-### Run Training
+### Run Training in the following order
 
 ```bash
 # Phase 1: SFT
-python src/sft_math.py
+sft_math_metamathqa.ipynb
 python src/sft_qa.py
 
 # Phase 2: RL

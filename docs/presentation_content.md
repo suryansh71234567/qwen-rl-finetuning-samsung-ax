@@ -3,11 +3,9 @@
 *Use this content to build your final PDF presentation.*
 
 ## Slide 1: Title Slide
-- **Project Title:** RL Fine-Tuning of Qwen2.5-1.5B for Multi-Benchmark QA
-- **Problem Statement:** 7 - Fine-Tuning and Reinforcement Learning for Multi-Benchmark Language Model Optimization
-- **Team:** [Your Team Name]
-- **Member:** Suryansh Singh
-- **Institute:** [Your Institute]
+- **Project Title:** Enhancing Reasoning in Small Language Models (SLMs) using Reinforcement Learning
+- **Member:** Suryansh Singh , R Kanishka Varshini
+- **Institute:** IIT Roorkee
 
 ## Slide 2: Project Overview & Objectives
 - **Goal:** Fine-tune a 1.5B parameter open-weight model (`Qwen2.5-1.5B-Instruct`) to excel at both mathematical reasoning (GSM8K) and factual QA (MMLU/StrategyQA).

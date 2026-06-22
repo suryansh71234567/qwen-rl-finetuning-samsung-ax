@@ -36,7 +36,7 @@ os.environ["TORCHDYNAMO_DISABLE"]     = "1"
 
 ### Step 5 — Run the Scripts
 
-Upload scripts from `src/` to Kaggle working directory, then:
+upload the notebooks in the kaggle and execute in the following order
 
 ```python
 # Option A: Run as Kaggle cells (copy-paste script content)
@@ -45,12 +45,11 @@ exec(open("/kaggle/working/sft_math.py").read())
 ```
 
 **Recommended order:**
-1. `sft_math.py` → trains SFT Math, pushes to `Suryansh7123/qwen2.5_lora_r16_finetune`
-2. `sft_qa.py` → trains SFT QA, pushes to `Suryansh7123/qwen2.5_lora_r16_finetune_STRATEGY`
-3. `rl_math.py` → loads SFT Math checkpoint, runs GRPO, pushes RL adapter
-4. `rl_qa_no_cot.py` → loads SFT QA checkpoint, runs GRPO QA
-5. `merge_models.py` → merges both RL models via task vectors
-6. `evaluate.py` → evaluates merged model on all three benchmarks
+1. `sft_math_metamathqa.ipynb` → trains SFT Math, pushes to `Suryansh7123/qwen2.5_lora_r16_finetune`
+2. `sft_flan_cot.ipynb` → trains SFT QA, pushes to `kanishkav/qwen2.5-1.5b-SFT-FLANCOT`
+3. `merge_models.ipynb` → merges both RL models via task vectors
+4. `rl_grpo_math.ipynb` → loads SFT Math checkpoint, runs GRPO, pushes RL adapter
+6. `evaluate.ipynb` → evaluates merged model on all three benchmarks
 
 ---
 

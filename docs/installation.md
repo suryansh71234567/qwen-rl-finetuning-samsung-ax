@@ -53,13 +53,13 @@ upload these notebooks in the kaggle
 
 ```bash
 # Phase 1: SFT
-sft_math_metamathqa.ipynb -> pushes to `Suryansh7123/qwen2.5_lora_r16_finetune`
-sft_flan_cot.ipynb -> pushes to `kanishkav/qwen2.5-1.5b-SFT-FLANCOT`
+sft_math_metamathqa.ipynb 
+sft_flan_cot.ipynb
 
-# Phase 3: Merge
+# Phase 2: Merge
 merge_models.ipynb
 
-# Phase 2: RL
+# Phase 3: RL
 rl_grpo_math.ipynb
 
 # Evaluate

@@ -38,7 +38,7 @@ We ran **10+ distinct experiments** across the three-phase pipeline. Many things
 
 | # | Experiment | Outcome |
 |---|-----------|---------|
-| 1 | SFT Math on MetaMathQA (150k, 1 epoch) | ✅ Strong GSM8K improvement from 56% to 63% |
+| 1 | SFT Math on MetaMathQA (150k, 1 epoch) | ✅ Strong GSM8K improvement |
 | 2 | SFT QA with FLAN-CoT dataset | ✅ **Breakthrough:** StrategyQA improved from 57% to 61% |
 | 3 | SFT QA direct-answer format | ❌ Underperformed CoT on complex reasoning |
 | 4 | GRPO Math with `max_new_tokens=800` | ❌ Constant token truncation, clipped_ratio=93% |

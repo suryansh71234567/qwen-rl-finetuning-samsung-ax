@@ -84,8 +84,6 @@ The [`src/`](./src/) folder contains the **original Kaggle notebooks with full t
 | Notebook | Description |
 |----------|-------------|
 | [`src/sft_math_metamathqa.ipynb`](./src/sft_math_metamathqa.ipynb) | SFT Math — full training run with loss curves |
-| [`src/sft_qa_strategy_mmlu.ipynb`](./src/sft_qa_strategy_mmlu.ipynb) | SFT QA — full training run |
-| [`src/sft_qa_v2_strategy_mmlu.ipynb`](./src/sft_qa_v2_strategy_mmlu.ipynb) | SFT QA v2 (improved dataset loading) |
 | [`src/sft_flan_cot.ipynb`](./src/sft_flan_cot.ipynb) | SFT with FLAN-COT (ablation study) |
 | [`src/merge-models.ipynb`](./src/merge-models.ipynb) | Task vector merging execution logs |
 | [`src/rl_grpo_math.ipynb`](./src/rl_grpo_math.ipynb) | GRPO RL Math — reward curves, curriculum promotions |

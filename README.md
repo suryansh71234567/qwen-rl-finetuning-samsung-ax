@@ -113,23 +113,36 @@ The [`src/`](./src/) folder contains the **original Kaggle notebooks with full t
 ## Technical Pipeline
 
 ```
-Qwen2.5-1.5B-Instruct (Base)
-         │
-    ┌────┴────┐
-    │         │
- SFT Math   SFT QA
-(MetaMathQA) (MMLU+StrategyQA)
-    │         │
- RL Math   RL QA
- (GRPO+    (GRPO+
- Curriculum) Binary Reward)
-    │         │
-    └────┬────┘
-         │
-   Task Vector Merge
-   (λ_math=0.5, λ_qa=0.5)
-         │
-   Merged Model ✅
+┌─────────────────────────────────────────────────────────┐
+│              Qwen/Qwen2.5-1.5B-Instruct                 │
+│                    (Base Model)                         │
+└───────────────────┬─────────────────────────────────────┘
+                    │
+          ┌─────────┴──────────┐
+          │                    │
+    ┌─────▼──────┐      ┌──────▼──────┐
+    │  SFT Math  │      │   SFT QA    │
+    │ MetaMathQA │      │ StrategyQA  │
+    │  150k, r16 │      │  13k, r16   │
+    └─────┬──────┘      └──────┬──────┘
+          │                    │
+          └─────────┬──────────┘
+                    │
+          ┌─────────▼──────────┐
+          │  Dare Ties Merge    │
+          └─────────────────────┘
+                  │
+            ┌─────▼──────┐      
+            │  RL Math   │     
+            │GRPO+Curric.│     
+            │  2k, r4    │      
+            └─────┬──────┘                   
+                  │
+            ┌─────▼──────┐      
+            │  final     │     
+            │  model     │           
+            └─────┬──────┘        
+
 ```
 
 ---

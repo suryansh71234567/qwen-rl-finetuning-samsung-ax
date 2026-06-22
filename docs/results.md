@@ -26,13 +26,13 @@
 
 ## Experiment Log
 
-### Experiment 1 — SFT Math Baseline
+### Experiment 1 — SFT Math Baseline ✅
 - **Dataset:** MetaMathQA 150k (sampled from 395k)
 - **Epochs:** 3 · **Batch:** 16 effective · **LR:** 2e-4
 - **Best checkpoint:** step-1500 (val loss = 1.822 vs 1.824 at final epoch)
 - **GSM8K result:** [FILL]%
 
-### Experiment 2 - SFT QA with CommonsenseQA 
+### Experiment 2 - SFT QA with CommonsenseQA ❌
 - **Dataset:** tau/commonsense_qa dataset
 - **Result:** Breaks the multi-step logic needed for StrategyQA resulted in 10% decrease than the baseline score
 

@@ -7,7 +7,7 @@
 - **Team members (Names)** - R Kanishka Varshini , Suryansh Singh
 - **Institute/College Name** - Indian Institute Of Technology Roorkee , Roorkee ,  Roorkee - Haridwar Highway, Roorkee, Uttarakhand 247667
 - **Final Presentation Google Drive Link** - https://drive.google.com/drive/folders/1SyJNupXwflVHkONSi2S88umqF5YNBTcI
-- **Full Submission Demo Video Link** - https://youtu.be/OBiiIYzLyDA?si=x6GSAZK2u3w4mJhM
+- **Full Submission Demo Video Link** - https://youtu.be/eKjpYSCyL88
 - **Setup & Result Reproducibility Video Link** - https://youtu.be/OBiiIYzLyDA?si=x6GSAZK2u3w4mJhM
 
 ---

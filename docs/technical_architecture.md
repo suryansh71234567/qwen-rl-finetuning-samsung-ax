@@ -7,29 +7,34 @@ This project implements a three-phase LLM fine-tuning pipeline for `Qwen/Qwen2.5
 ```
 ┌─────────────────────────────────────────────────────────┐
 │              Qwen/Qwen2.5-1.5B-Instruct                 │
-│                    (Base Model)                          │
+│                    (Base Model)                         │
 └───────────────────┬─────────────────────────────────────┘
                     │
           ┌─────────┴──────────┐
           │                    │
     ┌─────▼──────┐      ┌──────▼──────┐
     │  SFT Math  │      │   SFT QA    │
-    │ MetaMathQA │      │ MMLU+StratQA│
+    │ MetaMathQA │      │ StrategyQA  │
     │  150k, r16 │      │  13k, r16   │
-    └─────┬──────┘      └──────┬──────┘
-          │                    │
-    ┌─────▼──────┐      ┌──────▼──────┐
-    │  RL Math   │      │   RL QA     │
-    │GRPO+Curric.│      │ GRPO+Binary │
-    │  2k, r4   │      │  13k, r4    │
     └─────┬──────┘      └──────┬──────┘
           │                    │
           └─────────┬──────────┘
                     │
           ┌─────────▼──────────┐
-          │  Task Vector Merge  │
-          │ θ=θ_base+λA·τA+λB·τB│
+          │  Dare Ties Merge    │
           └─────────────────────┘
+                  │
+            ┌─────▼──────┐      
+            │  RL Math   │     
+            │GRPO+Curric.│     
+            │  2k, r4    │      
+            └─────┬──────┘                   
+                  │
+            ┌─────▼──────┐      
+            │  final     │     
+            │  model     │           
+            └─────┬──────┘        
+
 ```
 
 ---

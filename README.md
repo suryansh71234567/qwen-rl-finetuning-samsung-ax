@@ -32,7 +32,7 @@ To combine these capabilities without sequential catastrophic forgetting, we uti
 
 ## Experiments & Development Process
 
-> **Note on GitHub commit history:** The vast majority of active development happened **directly on Kaggle** (iterative notebook runs, live GPU sessions, reward curve inspection). GitHub was used for final code organisation. The real "commit history" is the Kaggle notebook execution logs inside the [`notebooks/`](./notebooks/) folder — each notebook contains cell outputs, training loss curves, and reward breakdowns that prove successful execution on T4 GPUs.
+> **Note on GitHub commit history:** The vast majority of active development happened **directly on Kaggle** (iterative notebook runs, live GPU sessions, reward curve inspection). GitHub was used for final code organisation. The real "commit history" is the Kaggle notebook execution logs inside the [`src/`](./src/) folder — each notebook contains cell outputs, training loss curves, and reward breakdowns that prove successful execution on T4 GPUs.
 
 We ran **10+ distinct experiments** across the three-phase pipeline. Many things worked; many did not — and both are documented:
 
@@ -92,15 +92,17 @@ All training and evaluation scripts are in [`src/`](./src/):
 | [`src/evaluate.py`](./src/evaluate.py) | Holdout evaluation across all three benchmarks |
 
 ### Kaggle Notebooks (With Execution Logs)
-The [`notebooks/`](./notebooks/) folder contains the **original Kaggle notebooks with full training logs and outputs**, proving successful execution on Kaggle T4 GPUs:
+The [`src/`](./src/) folder contains the **original Kaggle notebooks with full training logs and outputs**, proving successful execution on Kaggle T4 GPUs:
 
 | Notebook | Description |
 |----------|-------------|
-| [`notebooks/sft_math_metamathqa.ipynb`](./notebooks/sft_math_metamathqa.ipynb) | SFT Math — full training run with loss curves |
-| [`notebooks/sft_qa_strategy_mmlu.ipynb`](./notebooks/sft_qa_strategy_mmlu.ipynb) | SFT QA — full training run |
-| [`notebooks/rl_grpo_math.ipynb`](./notebooks/rl_grpo_math.ipynb) | GRPO RL Math — reward curves, curriculum promotions |
-| [`notebooks/sft_qa_v2_strategy_mmlu.ipynb`](./notebooks/sft_qa_v2_strategy_mmlu.ipynb) | SFT QA v2 (improved dataset loading) |
-| [`notebooks/sft_flan_cot.ipynb`](./notebooks/sft_flan_cot.ipynb) | SFT with FLAN-COT (ablation study) |
+| [`src/sft_math_metamathqa.ipynb`](./src/sft_math_metamathqa.ipynb) | SFT Math — full training run with loss curves |
+| [`src/sft_qa_strategy_mmlu.ipynb`](./src/sft_qa_strategy_mmlu.ipynb) | SFT QA — full training run |
+| [`src/rl_grpo_math.ipynb`](./src/rl_grpo_math.ipynb) | GRPO RL Math — reward curves, curriculum promotions |
+| [`src/sft_qa_v2_strategy_mmlu.ipynb`](./src/sft_qa_v2_strategy_mmlu.ipynb) | SFT QA v2 (improved dataset loading) |
+| [`src/sft_flan_cot.ipynb`](./src/sft_flan_cot.ipynb) | SFT with FLAN-COT (ablation study) |
+| [`src/evaluate.ipynb`](./src/evaluate.ipynb) | Evaluation pipeline execution logs |
+| [`src/merge-models.ipynb`](./src/merge-models.ipynb) | Task vector merging execution logs |
 
 ### Models Used
 - [Qwen/Qwen2.5-1.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct) — Base model (Apache 2.0)

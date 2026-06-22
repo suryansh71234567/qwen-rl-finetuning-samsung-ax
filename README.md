@@ -78,19 +78,6 @@ See the [`docs/`](./docs/) folder:
 - [`docs/results.md`](./docs/results.md) — Full benchmark results with training curves
 - [`docs/ax.md`](./docs/ax.md) — **Agentic AI development methodology** (how Antigravity/Gemini was used)
 
-### Source Code
-All training and evaluation scripts are in [`src/`](./src/):
-
-| Script | Purpose |
-|--------|---------|
-| [`src/sft_math.py`](./src/sft_math.py) | Phase 1: SFT on MetaMathQA (GSM8K track) |
-| [`src/sft_qa.py`](./src/sft_qa.py) | Phase 1: SFT on MMLU + StrategyQA (QA track) |
-| [`src/merge_models.py`](./src/merge_models.py) | Phase 2: Task vector model merging with grid search |
-| [`src/rl_math.py`](./src/rl_math.py) | Phase 3: GRPO RL with 3-tier curriculum (math) |
-| [`src/rl_qa_no_cot.py`](./src/rl_qa_no_cot.py) | Phase 3: GRPO RL direct-answer (QA, working) |
-| [`src/rl_qa_cot.py`](./src/rl_qa_cot.py) | Phase 3: GRPO RL with CoT (QA, ablation — failed) |
-| [`src/evaluate.py`](./src/evaluate.py) | Holdout evaluation across all three benchmarks |
-
 ### Kaggle Notebooks (With Execution Logs)
 The [`src/`](./src/) folder contains the **original Kaggle notebooks with full training logs and outputs**, proving successful execution on Kaggle T4 GPUs:
 

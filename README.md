@@ -120,7 +120,7 @@ The [`notebooks/`](./notebooks/) folder contains the **original Kaggle notebooks
 - [openai/gsm8k](https://huggingface.co/datasets/openai/gsm8k) — Grade School Math evaluation (MIT License)
 
 ### Datasets Published
-- [kanishkav/OpenThoughts_processed_qwen_Dataset](https://huggingface.co/datasets/kanishkav/OpenThoughts_processed_qwen_Dataset) - datset processed for qwen format
+- [kanishkav/OpenThoughts_processed_qwen_Dataset](https://huggingface.co/datasets/kanishkav/OpenThoughts_processed_qwen_Dataset) - dataset processed for qwen format
 
 ## Technical Pipeline
 

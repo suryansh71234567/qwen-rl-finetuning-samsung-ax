@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+env/
+.env/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Training outputs (too large for git)
+/kaggle/
+*.safetensors
+*.bin
+*.pt
+*.ckpt
+checkpoint-*/
+
+# Results / logs (keep results.json if small)
+wandb/
+runs/
+logs/
+*.log
+
+# Secrets
+.env
+*.key
+hf_token*
+secrets*
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temp files from development
+dump_*.py
+dump_*.txt
+rest_notebooks.txt
+grpo_full.txt
+extract_notebooks.py
+*.keepalive
+
+# Large model directories (use HuggingFace Hub instead)
+merged_model/
+qwen*/

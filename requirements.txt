@@ -1,0 +1,37 @@
+# ============================================================
+# Requirements for RL Fine-Tuning of Qwen2.5-1.5B
+# ============================================================
+#
+# IMPORTANT: Do NOT run `pip install -r requirements.txt` directly.
+# Version pinning for Unsloth + TRL requires a specific install order.
+#
+# Run this instead (Kaggle or local):
+#   pip install "unsloth[kaggle-new] @ git+https://github.com/unslothai/unsloth.git"
+#   pip install --no-deps trl peft accelerate bitsandbytes datasets
+#
+# WHY: trl>=0.25 + transformers>=5.6 re-introduces PicklingError with Unsloth.
+#      --no-deps prevents pip from upgrading transformers.
+#
+# This file documents the pinned versions that were validated to work:
+# ============================================================
+
+# Core fine-tuning stack (pinned)
+trl==0.24.0
+transformers==5.5.0
+unsloth @ git+https://github.com/unslothai/unsloth.git
+
+# LoRA / quantisation
+peft
+bitsandbytes
+accelerate
+
+# Data
+datasets
+huggingface_hub
+
+# Numerics
+torch>=2.0.0
+numpy
+
+# Evaluation only
+# (no additional deps beyond above)

@@ -4,6 +4,15 @@
 
 All training was developed and validated on **Kaggle with NVIDIA Tesla T4 (15.6 GB VRAM)**.
 
+### Local GPU (Advanced)
+
+Requires a GPU with **≥14 GB VRAM** and **CUDA CC ≥ 7.5** (RTX 2080 Ti or better).
+
+### Prerequisites
+- Python 3.10+
+- CUDA 11.8 or 12.x
+- Git
+
 ### Step 1 — Create a Kaggle Notebook
 1. Go to [kaggle.com](https://www.kaggle.com) → **Create** → **New Notebook**
 2. Under **Settings** → **Accelerator** → Select **GPU T4 x2** (or GPU P100)
@@ -16,92 +25,48 @@ All training was developed and validated on **Kaggle with NVIDIA Tesla T4 (15.6 
 
 ### Step 3 — Install Dependencies (Cell 1 of any notebook)
 ```bash
-# Pin exact versions — DO NOT upgrade individually
-pip install "unsloth[kaggle-new] @ git+https://github.com/unslothai/unsloth.git"
-pip install --no-deps trl peft accelerate bitsandbytes datasets
+# 
+!pip install "unsloth[kaggle-new] @ git+https://github.com/unslothai/unsloth.git"
+!pip install --no-deps trl peft accelerate bitsandbytes datasets
+!pip install huggingface_hub transformers==5.5.0
+!pip install "lm_eval[hf]==0.4.4"
+!pip install -q mergekit huggingface_hub
 ```
 
 > ⚠️ **Critical:** `trl >= 0.25` + `transformers >= 5.6` causes a `PicklingError` with Unsloth.  
 > The `--no-deps` flag on the second line prevents pip from pulling newer transformers.
 
-### Step 4 — Clear Stale Cache + Disable Dynamo (Cell 2)
-```python
-import shutil, os
-cache_path = "/kaggle/working/unsloth_compiled_cache"
-if os.path.exists(cache_path):
-    shutil.rmtree(cache_path)
-os.environ["UNSLOTH_COMPILE_DISABLE"] = "1"
-os.environ["TORCHDYNAMO_DISABLE"]     = "1"
-```
 
-### Step 5 — Notebooks upload
+### Step 4 — Notebooks to be uploaded
 
-upload the notebooks in the kaggle and execute in the following order
+upload these notebooks in the kaggle 
 
-**Recommended order:**
-1. `sft_math_metamathqa.ipynb` → trains SFT Math, pushes to `Suryansh7123/qwen2.5_lora_r16_finetune`
-2. `sft_flan_cot.ipynb` → trains SFT QA, pushes to `kanishkav/qwen2.5-1.5b-SFT-FLANCOT`
+1. `sft_math_metamathqa.ipynb` → trains SFT Math
+2. `sft_flan_cot.ipynb` → trains SFT QA
 3. `merge_models.ipynb` → merges both SFT models via Dare Ties method 
 4. `rl_grpo_math.ipynb` → loads SFT Math checkpoint, runs GRPO, pushes RL adapter
 6. `evaluate.ipynb` → evaluates merged model on all three benchmarks
 
 ---
 
-## Platform: Local GPU (Advanced)
-
-Requires a GPU with **≥14 GB VRAM** and **CUDA CC ≥ 7.5** (RTX 2080 Ti or better).
-
-### Prerequisites
-- Python 3.10+
-- CUDA 11.8 or 12.x
-- Git
-
-### Setup
-
-```bash
-# Install dependencies in Kaggle 
-pip install "unsloth[cu118-ampere-torch230] @ git+https://github.com/unslothai/unsloth.git"
-pip install --no-deps trl==0.24.0 peft accelerate bitsandbytes datasets
-pip install huggingface_hub transformers==5.5.0
-```
-
 ### Run Training in the following order
 
 ```bash
 # Phase 1: SFT
-sft_math_metamathqa.ipynb
-python src/sft_qa.py
-
-# Phase 2: RL
-python src/rl_math.py
-python src/rl_qa_no_cot.py
+sft_math_metamathqa.ipynb -> pushes to `Suryansh7123/qwen2.5_lora_r16_finetune`
+sft_flan_cot.ipynb -> pushes to `kanishkav/qwen2.5-1.5b-SFT-FLANCOT`
 
 # Phase 3: Merge
-python src/merge_models.py \
-  --base_model Qwen/Qwen2.5-1.5B-Instruct \
-  --math_model Suryansh7123/qwen2.5_grpo_rl_r4_metamath \
-  --qa_model   Suryansh7123/qwen2.5_grpo_rl_qa_no_cot \
-  --output_dir ./merged_model
+merge_models.ipynb
+
+# Phase 2: RL
+rl_grpo_math.ipynb
 
 # Evaluate
-python src/evaluate.py \
-  --model_path ./merged_model \
-  --benchmark all \
-  --n_samples 500
+evaluate.ipynb
 ```
 
 ---
-
-## Reproducing Results from Notebooks
-
-The easiest way to reproduce results is to run the Kaggle notebooks directly:
-
-1. Go to the `notebooks/` folder in this repo
-2. Download the notebook you want to reproduce
-3. On Kaggle: **Create** → **New Notebook** → **File** → **Import Notebook**
-4. Upload the downloaded `.ipynb` file
-5. Set GPU accelerator and add `HF_TOKEN` secret
-6. **Run All** — the notebook already contains all code cells in correct order
 
 > All notebooks include **cell outputs with training logs** showing they ran successfully on T4 GPUs.
 

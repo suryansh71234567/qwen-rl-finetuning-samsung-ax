@@ -49,7 +49,7 @@ This project implements a three-phase LLM fine-tuning pipeline for `Qwen/Qwen2.5
 - **Optimal checkpoint:** step-1500 (val loss minimum, confirmed empirically)
 
 ### SFT QA Track
-- **Dataset:** `metaeval/strategy-qa` (2.29k) + `cais/mmlu` auxiliary_train (99.8k). Downsampled to 15k total (13k train / 2k val).
+- **Dataset:** `FLANCOT`  Downsampled to 15k total (13k train / 2k val).
 - **Key design:** Direct-answer format (NO CoT). For retrieval-heavy QA on a 1.5B model, CoT causes hallucination and lowers exact-match. Single-token answers (A/B/C/D, True/False) maximise P(correct token) under greedy decoding.
 - **Same LoRA config** as Math SFT
 

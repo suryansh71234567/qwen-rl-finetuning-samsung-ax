@@ -38,7 +38,7 @@
 ## Slide 6: Results & Impact
 - **Mathematical Reasoning (GSM8K):** Improved from ~56% (base) to **63%** using our 3-tier curriculum GRPO pipeline (a massive 6-7% absolute improvement).
 - **Boolean QA (StrategyQA):** Improved from 57% (base) to **61%** via CoT reasoning.
-- **Merged Model Performance:** Task Vector Merge successfully combined both specialists with only a minor performance dip (~62% GSM8K, ~60.5% StrategyQA), achieving true multi-benchmark optimization on a 1.5B model.
+- **Merged Model Performance:** Task Vector Merge successfully combined both specialists with only a minor performance dip (~62% GSM8K, ~60% StrategyQA), achieving true multi-benchmark optimization on a 1.5B model.
 
 ## Slide 7: Conclusion & Reproducibility
 - **10+ Verified Experiments:** Full iteration history documented in `docs/results.md`.

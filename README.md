@@ -106,6 +106,7 @@ The [`notebooks/`](./notebooks/) folder contains the **original Kaggle notebooks
 - [Qwen/Qwen2.5-1.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct) — Base model (Apache 2.0)
 
 ### Models Published
+- [kanishkav/qwen2.5-1.5b-merged-model](https://huggingface.co/kanishkav/qwen2.5-1.5b-merged-model) - Final Reasoning Enhanced SLM 
 - [Suryansh7123/qwen2.5_lora_r16_finetune](https://huggingface.co/Suryansh7123/qwen2.5_lora_r16_finetune) — SFT Math LoRA checkpoint
 - [Suryansh7123/qwen2.5_lora_r16_finetune_STRATEGY](https://huggingface.co/Suryansh7123/qwen2.5_lora_r16_finetune_STRATEGY) — SFT QA LoRA checkpoint
 - [Suryansh7123/qwen2.5_grpo_rl_r4_metamath](https://huggingface.co/Suryansh7123/qwen2.5_grpo_rl_r4_metamath) — RL Math adapter (GRPO)

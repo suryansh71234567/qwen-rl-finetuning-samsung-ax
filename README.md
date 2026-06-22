@@ -59,7 +59,7 @@ We ran **10+ distinct experiments** across the three-phase pipeline. Many things
 | Model Stage | GSM8K | StrategyQA | Notes |
 |---|---|---|---|
 | Base `Qwen2.5-1.5B-Instruct` | ~56.0% | 57.0% | Zero-shot baseline |
-| After SFT Math (MetaMathQA 150k) | ~63.0% | - | checkpoint-1500 |
+| After SFT Math (MetaMathQA 150k) | ~60.0% | - | checkpoint-1500 |
 | After SFT QA (FLAN-CoT) | - | 61.0% | CoT reasoning |
 | After RL Math (GRPO, MetaMathQA 2k) | **63.0%** | - | r=4 LoRA, 3-tier curriculum |
 | **Merged Model (Task Vectors)** | **~62.0%** | **~60.5%** | λ_math=0.5, λ_qa=0.5 (Minor dip from merge) |

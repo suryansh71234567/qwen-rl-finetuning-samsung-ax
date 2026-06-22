@@ -38,12 +38,6 @@ os.environ["TORCHDYNAMO_DISABLE"]     = "1"
 
 upload the notebooks in the kaggle and execute in the following order
 
-```python
-# Option A: Run as Kaggle cells (copy-paste script content)
-# Option B: Upload .py files and run via:
-exec(open("/kaggle/working/sft_math.py").read())
-```
-
 **Recommended order:**
 1. `sft_math_metamathqa.ipynb` → trains SFT Math, pushes to `Suryansh7123/qwen2.5_lora_r16_finetune`
 2. `sft_flan_cot.ipynb` → trains SFT QA, pushes to `kanishkav/qwen2.5-1.5b-SFT-FLANCOT`
